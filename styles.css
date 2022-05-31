@@ -1,3 +1,93 @@
-* {
-    background-color: black;
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    height: 50px;
+    border-bottom: 1px solid grey;
+}
+
+header > a {
+    font-size: 20px;
+    font-weight: bold;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-right: 1px solid black;
+    /* border-right: 1px solid black; */
+}
+
+.menu-item:hover {
+    background-color: #eee;
+}
+
+.menu-item:active {
+    background-color: #ddd;
+}
+
+
+.dropdown {
+    position: relative;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+.menu-item + button {
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-right: 1px solid black;
+    background: none;
+    cursor: pointer;
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    left: -140px;
+    top: 60px;
+    height: fit-content;
+    width: 200px;
+    font-weight: bold;
+    list-style: none;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    /* opacity: 0; */
+}
+
+.menu-item:focus + .dropdown {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.dropdown-item {
+    padding: .4rem;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.dropdown-item:last-child {
+    border-bottom:none;
 }
